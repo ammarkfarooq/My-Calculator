@@ -103,7 +103,7 @@ export default class Calculator extends React.Component {
               <ButtonTax handleClick={this.handleClick} label={"Tax"} />
             </Col>
             <Col>
-                <ButtonTax handleClick={this.handleClick} label={<MaterialIcons className='backspace'></MaterialIcons>}/>
+                <ButtonTax handleClick={this.handleClick} label={"Back"}/>
             </Col>
           </Row>
         </Container>
@@ -663,6 +663,12 @@ export default class Calculator extends React.Component {
         break;
       }
 
+      case 'Back':{
+        var backSpaced=this.state.question;
+        backSpaced=backSpaced.substring(0,backSpaced.length-1)
+        this.setState({question:backSpaced})
+        break;
+      }
       default: {
         if (this.state.operator != "tax") {
           this.setState({ answer: "" });
