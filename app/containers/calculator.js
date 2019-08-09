@@ -532,7 +532,7 @@ export default class Calculator extends React.Component {
                     ans = this.state.sum;
                     var ans1 = ans.toString();
                     ans1 = parseInt(ans1, 10);
-                    ans1 = toFixed(2);
+                    ans1 = ans1.toFixed(2);
                     ans1 = ans1.toString().split(".");
                     ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                     ans1 = ans1.join(".");
@@ -552,7 +552,7 @@ export default class Calculator extends React.Component {
                       ans = this.state.sum;
                       var ans1 = ans.toString();
                       ans1 = parseInt(ans1, 10);
-                      ans1 = toFixed(2);
+                      ans1 = ans1.toFixed(2);
                       ans1 = ans1.toString().split(".");
                       ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                       ans1 = ans1.join(".");
@@ -612,7 +612,7 @@ export default class Calculator extends React.Component {
                 ans = this.state.sum;
                 var ans1 = ans.toString();
                 ans1 = parseInt(ans1, 10);
-                ans1 = toFixed(2);
+                ans1 = ans1.toFixed(2);
                 ans1 = ans1.toString().split(".");
                 ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 ans1 = ans1.join(".");
@@ -632,7 +632,7 @@ export default class Calculator extends React.Component {
                   ans = this.state.sum;
                   var ans1 = ans.toString();
                   ans1 = parseInt(ans1, 10);
-                  ans1 = toFixed(2);
+                  ans1 = ans1.toFixed(2);
                   ans1 = ans1.toString().split(".");
                   ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                   ans1 = ans1.join(".");
@@ -652,7 +652,7 @@ export default class Calculator extends React.Component {
                     ans = this.state.sum;
                     var ans1 = ans.toString();
                     ans1 = parseInt(ans1, 10);
-                    ans1 = toFixed(2);
+                    ans1 = ans1.toFixed(2);
                     ans1 = ans1.toString().split(".");
                     ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                     ans1 = ans1.join(".");
@@ -672,7 +672,7 @@ export default class Calculator extends React.Component {
                       ans = this.state.sum;
                       var ans1 = ans.toString();
                       ans1 = parseInt(ans1, 10);
-                      ans1 = toFixed(2);
+                      ans1 = ans1.toFixed(2);
                       ans1 = ans1.toString().split(".");
                       ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                       ans1 = ans1.join(".");
