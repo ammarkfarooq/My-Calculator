@@ -118,6 +118,7 @@ export default class Calculator extends React.Component {
 
               if (this.state.operator == "+") {
                 var1 = this.state.question.indexOf("+");
+                this.state.operand1=this.state.question.slice(0,var1)
                 operand2 = this.state.question.slice(var1 + 1);
                 if (operand2 != "") {
                   var integer1 = parseInt(this.state.operand1, 10);
@@ -133,6 +134,7 @@ export default class Calculator extends React.Component {
 
               if (this.state.operator == "-") {
                 var1 = this.state.question.indexOf("-");
+                this.state.operand1=this.state.question.slice(0,var1)
                 operand2 = this.state.question.slice(var1 + 1);
                 if (operand2 != "") {
                   var integer1 = parseInt(this.state.operand1, 10);
@@ -148,6 +150,7 @@ export default class Calculator extends React.Component {
 
               if (this.state.operator == "*") {
                 var1 = this.state.question.indexOf("*");
+                this.state.operand1=this.state.question.slice(0,var1)
                 operand2 = this.state.question.slice(var1 + 1);
                 if (operand2 != "") {
                   var integer1 = parseInt(this.state.operand1, 10);
@@ -163,6 +166,7 @@ export default class Calculator extends React.Component {
 
               if (this.state.operator == "/") {
                 var1 = this.state.question.indexOf("/");
+                this.state.operand1=this.state.question.slice(0,var1)
                 operand2 = this.state.question.slice(var1 + 1);
                 if (operand2 != "") {
                   var integer1 = parseInt(this.state.operand1, 10);
@@ -205,7 +209,6 @@ export default class Calculator extends React.Component {
 
       case "+": {
         let var3 = this.state.question.charAt(this.state.question.length - 1);
-        console.log(var3);
         if (
           var3 != "+" &&
           var3 != "-" &&
@@ -224,6 +227,7 @@ export default class Calculator extends React.Component {
               if (this.state.operator == "-") {
                 let var2 = this.state.question.indexOf("-");
                 operand2 = this.state.question.slice(var2 + 1);
+                this.state.operand1=this.state.question.slice(0,var2)
                 integer1 = parseInt(this.state.operand1, 10);
                 integer2 = parseInt(operand2, 10);
                 this.state.sum = integer1 - integer2;
@@ -238,6 +242,7 @@ export default class Calculator extends React.Component {
                 if (this.state.operator == "+") {
                   let var2 = this.state.question.indexOf("+");
                   operand2 = this.state.question.slice(var2 + 1);
+                  this.state.operand1=this.state.question.slice(0,var2)
                   integer1 = parseInt(this.state.operand1, 10);
                   integer2 = parseInt(operand2, 10);
                   this.state.sum = integer1 + integer2;
@@ -252,6 +257,7 @@ export default class Calculator extends React.Component {
                   if (this.state.operator == "*") {
                     let var2 = this.state.question.indexOf("*");
                     operand2 = this.state.question.slice(var2 + 1);
+                    this.state.operand1=this.state.question.slice(0,var2)
                     integer1 = parseInt(this.state.operand1, 10);
                     integer2 = parseInt(operand2, 10);
                     this.state.sum = integer1 * integer2;
@@ -266,6 +272,7 @@ export default class Calculator extends React.Component {
                     if (this.state.operator == "/") {
                       let var2 = this.state.question.indexOf("/");
                       operand2 = this.state.question.slice(var2 + 1);
+                      this.state.operand1=this.state.question.slice(0,var2)
                       integer1 = parseInt(this.state.operand1, 10);
                       integer2 = parseInt(operand2, 10);
                       this.state.sum = integer1 / integer2;
@@ -321,6 +328,7 @@ export default class Calculator extends React.Component {
               if (this.state.operator == "+") {
                 let var2 = this.state.question.indexOf("+");
                 operand2 = this.state.question.slice(var2 + 1);
+                this.state.operand1=this.state.question.slice(0,var2)
                 integer1 = parseInt(this.state.operand1, 10);
                 integer2 = parseInt(operand2, 10);
                 this.state.sum = integer1 + integer2;
@@ -342,6 +350,7 @@ export default class Calculator extends React.Component {
                     let var2 = this.state.question.lastIndexOf("-");
                     operand2 = this.state.question.slice(var2 + 1);
                     operand2 = "-" + operand2;
+                    this.state.operand1=this.state.question.slice(0,var2)
                     integer1 = parseInt(this.state.operand1, 10);
                     integer2 = parseInt(operand2, 10);
                     this.state.sum = integer1 + integer2;
@@ -366,6 +375,7 @@ export default class Calculator extends React.Component {
                   if (this.state.operator == "*") {
                     let var2 = this.state.question.indexOf("*");
                     operand2 = this.state.question.slice(var2 + 1);
+                    this.state.operand1=this.state.question.slice(0,var2)
                     integer1 = parseInt(this.state.operand1, 10);
                     integer2 = parseInt(operand2, 10);
                     this.state.sum = integer1 * integer2;
@@ -380,6 +390,7 @@ export default class Calculator extends React.Component {
                     if (this.state.operator == "/") {
                       let var2 = this.state.question.indexOf("/");
                       operand2 = this.state.question.slice(var2 + 1);
+                      this.state.operand1=this.state.question.slice(0,var2)
                       integer1 = parseInt(this.state.operand1, 10);
                       integer2 = parseInt(operand2, 10);
                       this.state.sum = integer1 / integer2;
@@ -434,6 +445,7 @@ export default class Calculator extends React.Component {
               if (this.state.operator == "+") {
                 let var2 = this.state.question.indexOf("+");
                 operand2 = this.state.question.slice(var2 + 1);
+                this.state.operand1=this.state.question.slice(0,var2)
                 integer1 = parseInt(this.state.operand1, 10);
                 integer2 = parseInt(operand2, 10);
                 this.state.sum = integer1 + integer2;
@@ -448,6 +460,7 @@ export default class Calculator extends React.Component {
                 if (this.state.operator == "-") {
                   let var2 = this.state.question.indexOf("-");
                   operand2 = this.state.question.slice(var2 + 1);
+                  this.state.operand1=this.state.question.slice(0,var2)
                   integer1 = parseInt(this.state.operand1, 10);
                   integer2 = parseInt(operand2, 10);
                   this.state.sum = integer1 - integer2;
@@ -462,6 +475,7 @@ export default class Calculator extends React.Component {
                   if (this.state.operator == "*") {
                     let var2 = this.state.question.indexOf("*");
                     operand2 = this.state.question.slice(var2 + 1);
+                    this.state.operand1=this.state.question.slice(0,var2)
                     integer1 = parseInt(this.state.operand1, 10);
                     integer2 = parseInt(operand2, 10);
                     this.state.sum = integer1 * integer2;
@@ -476,6 +490,7 @@ export default class Calculator extends React.Component {
                     if (this.state.operator == "/") {
                       let var2 = this.state.question.indexOf("/");
                       operand2 = this.state.question.slice(var2 + 1);
+                      this.state.operand1=this.state.question.slice(0,var2)
                       integer1 = parseInt(this.state.operand1, 10);
                       integer2 = parseInt(operand2, 10);
                       this.state.sum = integer1 / integer2;
@@ -530,6 +545,7 @@ export default class Calculator extends React.Component {
               if (this.state.operator == "+") {
                 let var2 = this.state.question.indexOf("+");
                 operand2 = this.state.question.slice(var2 + 1);
+                this.state.operand1=this.state.question.slice(0,var2)
                 integer1 = parseInt(this.state.operand1, 10);
                 integer2 = parseInt(operand2, 10);
                 this.state.sum = integer1 + integer2;
@@ -544,6 +560,7 @@ export default class Calculator extends React.Component {
                 if (this.state.operator == "-") {
                   let var2 = this.state.question.indexOf("-");
                   operand2 = this.state.question.slice(var2 + 1);
+                  this.state.operand1=this.state.question.slice(0,var2)
                   integer1 = parseInt(this.state.operand1, 10);
                   integer2 = parseInt(operand2, 10);
                   this.state.sum = integer1 - integer2;
@@ -558,6 +575,7 @@ export default class Calculator extends React.Component {
                   if (this.state.operator == "*") {
                     let var2 = this.state.question.indexOf("*");
                     operand2 = this.state.question.slice(var2 + 1);
+                    this.state.operand1=this.state.question.slice(0,var2)
                     integer1 = parseInt(this.state.operand1, 10);
                     integer2 = parseInt(operand2, 10);
                     this.state.sum = integer1 * integer2;
@@ -572,6 +590,7 @@ export default class Calculator extends React.Component {
                     if (this.state.operator == "/") {
                       let var2 = this.state.question.indexOf("/");
                       operand2 = this.state.question.slice(var2 + 1);
+                      this.state.operand1=this.state.question.slice(0,var2)
                       integer1 = parseInt(this.state.operand1, 10);
                       integer2 = parseInt(operand2, 10);
                       this.state.sum = integer1 / integer2;
