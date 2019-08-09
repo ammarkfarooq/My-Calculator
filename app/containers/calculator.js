@@ -118,7 +118,7 @@ export default class Calculator extends React.Component {
 
               if (this.state.operator == "+") {
                 var1 = this.state.question.indexOf("+");
-                this.state.operand1=this.state.question.slice(0,var1)
+                this.state.operand1 = this.state.question.slice(0, var1);
                 operand2 = this.state.question.slice(var1 + 1);
                 if (operand2 != "") {
                   var integer1 = parseInt(this.state.operand1, 10);
@@ -134,7 +134,7 @@ export default class Calculator extends React.Component {
 
               if (this.state.operator == "-") {
                 var1 = this.state.question.indexOf("-");
-                this.state.operand1=this.state.question.slice(0,var1)
+                this.state.operand1 = this.state.question.slice(0, var1);
                 operand2 = this.state.question.slice(var1 + 1);
                 if (operand2 != "") {
                   var integer1 = parseInt(this.state.operand1, 10);
@@ -150,7 +150,7 @@ export default class Calculator extends React.Component {
 
               if (this.state.operator == "*") {
                 var1 = this.state.question.indexOf("*");
-                this.state.operand1=this.state.question.slice(0,var1)
+                this.state.operand1 = this.state.question.slice(0, var1);
                 operand2 = this.state.question.slice(var1 + 1);
                 if (operand2 != "") {
                   var integer1 = parseInt(this.state.operand1, 10);
@@ -166,7 +166,7 @@ export default class Calculator extends React.Component {
 
               if (this.state.operator == "/") {
                 var1 = this.state.question.indexOf("/");
-                this.state.operand1=this.state.question.slice(0,var1)
+                this.state.operand1 = this.state.question.slice(0, var1);
                 operand2 = this.state.question.slice(var1 + 1);
                 if (operand2 != "") {
                   var integer1 = parseInt(this.state.operand1, 10);
@@ -188,6 +188,11 @@ export default class Calculator extends React.Component {
             } else {
               var ans1 = ans.toString();
               if (ans1 != "NaN") {
+                ans1 = parseInt(ans1, 10);
+                ans1 = ans1.toFixed(2);
+                ans1 = ans1.toString().split(".");
+                ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                ans1 = ans1.join(".");
                 this.setState({ answer: ans1, question: "" });
               } else {
                 this.setState({ answer: "Math Error", question: "" });
@@ -227,12 +232,17 @@ export default class Calculator extends React.Component {
               if (this.state.operator == "-") {
                 let var2 = this.state.question.indexOf("-");
                 operand2 = this.state.question.slice(var2 + 1);
-                this.state.operand1=this.state.question.slice(0,var2)
+                this.state.operand1 = this.state.question.slice(0, var2);
                 integer1 = parseInt(this.state.operand1, 10);
                 integer2 = parseInt(operand2, 10);
                 this.state.sum = integer1 - integer2;
                 ans = this.state.sum;
                 var ans1 = ans.toString();
+                ans1 = parseInt(ans1, 10);
+                ans1 = ans1.toFixed(2);
+                ans1 = ans1.toString().split(".");
+                ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                ans1 = ans1.join(".");
                 this.setState({ answer: ans1 });
                 this.setState({ question: "" });
                 ans2 = ans1 + "+";
@@ -242,12 +252,17 @@ export default class Calculator extends React.Component {
                 if (this.state.operator == "+") {
                   let var2 = this.state.question.indexOf("+");
                   operand2 = this.state.question.slice(var2 + 1);
-                  this.state.operand1=this.state.question.slice(0,var2)
+                  this.state.operand1 = this.state.question.slice(0, var2);
                   integer1 = parseInt(this.state.operand1, 10);
                   integer2 = parseInt(operand2, 10);
                   this.state.sum = integer1 + integer2;
                   ans = this.state.sum;
                   var ans1 = ans.toString();
+                  ans1 = parseInt(ans1, 10);
+                  ans1 = ans1.toFixed(2);
+                  ans1 = ans1.toString().split(".");
+                  ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  ans1 = ans1.join(".");
                   this.setState({ answer: ans1 });
                   this.setState({ question: "" });
                   ans2 = ans1 + "+";
@@ -257,12 +272,17 @@ export default class Calculator extends React.Component {
                   if (this.state.operator == "*") {
                     let var2 = this.state.question.indexOf("*");
                     operand2 = this.state.question.slice(var2 + 1);
-                    this.state.operand1=this.state.question.slice(0,var2)
+                    this.state.operand1 = this.state.question.slice(0, var2);
                     integer1 = parseInt(this.state.operand1, 10);
                     integer2 = parseInt(operand2, 10);
                     this.state.sum = integer1 * integer2;
                     ans = this.state.sum;
                     var ans1 = ans.toString();
+                    ans1 = parseInt(ans1, 10);
+                    ans1 = ans1.toFixed(2);
+                    ans1 = ans1.toString().split(".");
+                    ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    ans1 = ans1.join(".");
                     this.setState({ answer: ans1 });
                     this.setState({ question: "" });
                     ans2 = ans1 + "+";
@@ -272,12 +292,17 @@ export default class Calculator extends React.Component {
                     if (this.state.operator == "/") {
                       let var2 = this.state.question.indexOf("/");
                       operand2 = this.state.question.slice(var2 + 1);
-                      this.state.operand1=this.state.question.slice(0,var2)
+                      this.state.operand1 = this.state.question.slice(0, var2);
                       integer1 = parseInt(this.state.operand1, 10);
                       integer2 = parseInt(operand2, 10);
                       this.state.sum = integer1 / integer2;
                       ans = this.state.sum;
                       var ans1 = ans.toString();
+                      ans1 = parseInt(ans1, 10);
+                      ans1 = ans1.toFixed(2);
+                      ans1 = ans1.toString().split(".");
+                      ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                      ans1 = ans1.join(".");
                       this.setState({ answer: ans1 });
                       this.setState({ question: "" });
                       ans2 = ans1 + "+";
@@ -328,12 +353,17 @@ export default class Calculator extends React.Component {
               if (this.state.operator == "+") {
                 let var2 = this.state.question.indexOf("+");
                 operand2 = this.state.question.slice(var2 + 1);
-                this.state.operand1=this.state.question.slice(0,var2)
+                this.state.operand1 = this.state.question.slice(0, var2);
                 integer1 = parseInt(this.state.operand1, 10);
                 integer2 = parseInt(operand2, 10);
                 this.state.sum = integer1 + integer2;
                 ans = this.state.sum;
                 var ans1 = ans.toString();
+                ans1 = parseInt(ans1, 10);
+                ans1 = ans1.toFixed(2);
+                ans1 = ans1.toString().split(".");
+                ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                ans1 = ans1.join(".");
                 this.setState({ answer: ans1 });
                 this.setState({ question: "" });
                 ans2 = ans1 + "-";
@@ -350,7 +380,7 @@ export default class Calculator extends React.Component {
                     let var2 = this.state.question.lastIndexOf("-");
                     operand2 = this.state.question.slice(var2 + 1);
                     operand2 = "-" + operand2;
-                    this.state.operand1=this.state.question.slice(0,var2)
+                    this.state.operand1 = this.state.question.slice(0, var2);
                     integer1 = parseInt(this.state.operand1, 10);
                     integer2 = parseInt(operand2, 10);
                     this.state.sum = integer1 + integer2;
@@ -375,12 +405,17 @@ export default class Calculator extends React.Component {
                   if (this.state.operator == "*") {
                     let var2 = this.state.question.indexOf("*");
                     operand2 = this.state.question.slice(var2 + 1);
-                    this.state.operand1=this.state.question.slice(0,var2)
+                    this.state.operand1 = this.state.question.slice(0, var2);
                     integer1 = parseInt(this.state.operand1, 10);
                     integer2 = parseInt(operand2, 10);
                     this.state.sum = integer1 * integer2;
                     ans = this.state.sum;
                     var ans1 = ans.toString();
+                    ans1 = parseInt(ans1, 10);
+                    ans1 = ans1.toFixed(2);
+                    ans1 = ans1.toString().split(".");
+                    ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    ans1 = ans1.join(".");
                     this.setState({ answer: ans1 });
                     this.setState({ question: "" });
                     ans2 = ans1 + "-";
@@ -390,12 +425,17 @@ export default class Calculator extends React.Component {
                     if (this.state.operator == "/") {
                       let var2 = this.state.question.indexOf("/");
                       operand2 = this.state.question.slice(var2 + 1);
-                      this.state.operand1=this.state.question.slice(0,var2)
+                      this.state.operand1 = this.state.question.slice(0, var2);
                       integer1 = parseInt(this.state.operand1, 10);
                       integer2 = parseInt(operand2, 10);
                       this.state.sum = integer1 / integer2;
                       ans = this.state.sum;
                       var ans1 = ans.toString();
+                      ans1 = parseInt(ans1, 10);
+                      ans1 = ans1.toFixed(2);
+                      ans1 = ans1.toString().split(".");
+                      ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                      ans1 = ans1.join(".");
                       this.setState({ answer: ans1 });
                       this.setState({ question: "" });
                       ans2 = ans1 + "-";
@@ -445,12 +485,17 @@ export default class Calculator extends React.Component {
               if (this.state.operator == "+") {
                 let var2 = this.state.question.indexOf("+");
                 operand2 = this.state.question.slice(var2 + 1);
-                this.state.operand1=this.state.question.slice(0,var2)
+                this.state.operand1 = this.state.question.slice(0, var2);
                 integer1 = parseInt(this.state.operand1, 10);
                 integer2 = parseInt(operand2, 10);
                 this.state.sum = integer1 + integer2;
                 ans = this.state.sum;
                 var ans1 = ans.toString();
+                ans1 = parseInt(ans1, 10);
+                ans1 = ans1.toFixed(2);
+                ans1 = ans1.toString().split(".");
+                ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                ans1 = ans1.join(".");
                 this.setState({ answer: ans1 });
                 this.setState({ question: "" });
                 ans2 = ans1 + "*";
@@ -460,12 +505,17 @@ export default class Calculator extends React.Component {
                 if (this.state.operator == "-") {
                   let var2 = this.state.question.indexOf("-");
                   operand2 = this.state.question.slice(var2 + 1);
-                  this.state.operand1=this.state.question.slice(0,var2)
+                  this.state.operand1 = this.state.question.slice(0, var2);
                   integer1 = parseInt(this.state.operand1, 10);
                   integer2 = parseInt(operand2, 10);
                   this.state.sum = integer1 - integer2;
                   ans = this.state.sum;
                   var ans1 = ans.toString();
+                  ans1 = parseInt(ans1, 10);
+                  ans1 = ans1.toFixed(2);
+                  ans1 = ans1.toString().split(".");
+                  ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  ans1 = ans1.join(".");
                   this.setState({ answer: ans1 });
                   this.setState({ question: "" });
                   ans2 = ans1 + "*";
@@ -475,12 +525,17 @@ export default class Calculator extends React.Component {
                   if (this.state.operator == "*") {
                     let var2 = this.state.question.indexOf("*");
                     operand2 = this.state.question.slice(var2 + 1);
-                    this.state.operand1=this.state.question.slice(0,var2)
+                    this.state.operand1 = this.state.question.slice(0, var2);
                     integer1 = parseInt(this.state.operand1, 10);
                     integer2 = parseInt(operand2, 10);
                     this.state.sum = integer1 * integer2;
                     ans = this.state.sum;
                     var ans1 = ans.toString();
+                    ans1 = parseInt(ans1, 10);
+                    ans1 = toFixed(2);
+                    ans1 = ans1.toString().split(".");
+                    ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    ans1 = ans1.join(".");
                     this.setState({ answer: ans1 });
                     this.setState({ question: "" });
                     ans2 = ans1 + "*";
@@ -490,12 +545,17 @@ export default class Calculator extends React.Component {
                     if (this.state.operator == "/") {
                       let var2 = this.state.question.indexOf("/");
                       operand2 = this.state.question.slice(var2 + 1);
-                      this.state.operand1=this.state.question.slice(0,var2)
+                      this.state.operand1 = this.state.question.slice(0, var2);
                       integer1 = parseInt(this.state.operand1, 10);
                       integer2 = parseInt(operand2, 10);
                       this.state.sum = integer1 / integer2;
                       ans = this.state.sum;
                       var ans1 = ans.toString();
+                      ans1 = parseInt(ans1, 10);
+                      ans1 = toFixed(2);
+                      ans1 = ans1.toString().split(".");
+                      ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                      ans1 = ans1.join(".");
                       this.setState({ answer: ans1 });
                       this.setState({ question: "" });
                       ans2 = ans1 + "*";
@@ -545,12 +605,17 @@ export default class Calculator extends React.Component {
               if (this.state.operator == "+") {
                 let var2 = this.state.question.indexOf("+");
                 operand2 = this.state.question.slice(var2 + 1);
-                this.state.operand1=this.state.question.slice(0,var2)
+                this.state.operand1 = this.state.question.slice(0, var2);
                 integer1 = parseInt(this.state.operand1, 10);
                 integer2 = parseInt(operand2, 10);
                 this.state.sum = integer1 + integer2;
                 ans = this.state.sum;
                 var ans1 = ans.toString();
+                ans1 = parseInt(ans1, 10);
+                ans1 = toFixed(2);
+                ans1 = ans1.toString().split(".");
+                ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                ans1 = ans1.join(".");
                 this.setState({ answer: ans1 });
                 this.setState({ question: "" });
                 ans2 = ans1 + "/";
@@ -560,12 +625,17 @@ export default class Calculator extends React.Component {
                 if (this.state.operator == "-") {
                   let var2 = this.state.question.indexOf("-");
                   operand2 = this.state.question.slice(var2 + 1);
-                  this.state.operand1=this.state.question.slice(0,var2)
+                  this.state.operand1 = this.state.question.slice(0, var2);
                   integer1 = parseInt(this.state.operand1, 10);
                   integer2 = parseInt(operand2, 10);
                   this.state.sum = integer1 - integer2;
                   ans = this.state.sum;
                   var ans1 = ans.toString();
+                  ans1 = parseInt(ans1, 10);
+                  ans1 = toFixed(2);
+                  ans1 = ans1.toString().split(".");
+                  ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  ans1 = ans1.join(".");
                   this.setState({ answer: ans1 });
                   this.setState({ question: "" });
                   ans2 = ans1 + "/";
@@ -575,12 +645,17 @@ export default class Calculator extends React.Component {
                   if (this.state.operator == "*") {
                     let var2 = this.state.question.indexOf("*");
                     operand2 = this.state.question.slice(var2 + 1);
-                    this.state.operand1=this.state.question.slice(0,var2)
+                    this.state.operand1 = this.state.question.slice(0, var2);
                     integer1 = parseInt(this.state.operand1, 10);
                     integer2 = parseInt(operand2, 10);
                     this.state.sum = integer1 * integer2;
                     ans = this.state.sum;
                     var ans1 = ans.toString();
+                    ans1 = parseInt(ans1, 10);
+                    ans1 = toFixed(2);
+                    ans1 = ans1.toString().split(".");
+                    ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    ans1 = ans1.join(".");
                     this.setState({ answer: ans1 });
                     this.setState({ question: "" });
                     ans2 = ans1 + "/";
@@ -590,12 +665,17 @@ export default class Calculator extends React.Component {
                     if (this.state.operator == "/") {
                       let var2 = this.state.question.indexOf("/");
                       operand2 = this.state.question.slice(var2 + 1);
-                      this.state.operand1=this.state.question.slice(0,var2)
+                      this.state.operand1 = this.state.question.slice(0, var2);
                       integer1 = parseInt(this.state.operand1, 10);
                       integer2 = parseInt(operand2, 10);
                       this.state.sum = integer1 / integer2;
                       ans = this.state.sum;
                       var ans1 = ans.toString();
+                      ans1 = parseInt(ans1, 10);
+                      ans1 = toFixed(2);
+                      ans1 = ans1.toString().split(".");
+                      ans1[0] = ans1[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                      ans1 = ans1.join(".");
                       this.setState({ answer: ans1 });
                       this.setState({ question: "" });
                       ans2 = ans1 + "/";
