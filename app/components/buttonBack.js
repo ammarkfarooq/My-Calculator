@@ -1,8 +1,7 @@
 import React from "react";
 import { Text, StyleSheet, TouchableOpacity } from "react-native";
-import Back from './back.png'
 
-export default class ButtonTax extends React.Component {
+export default class ButtonBack extends React.Component {
   render() {
     return (
       <TouchableOpacity
@@ -19,17 +18,16 @@ export default class ButtonTax extends React.Component {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#228b22",
+    backgroundColor: "#ffd800",
     width: 90,
     height: 60,
     borderRadius: 10,
-    marginTop: 30,
-    image: 'Back'
+    marginTop: 30
   },
   buttonText: {
     position: "absolute",
     top: 12,
-    left: 25,
+    left: 18,
     fontSize: 26,
     fontWeight: "bold"
   }
