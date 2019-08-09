@@ -8,7 +8,6 @@ export default class OutputScreenRow extends React.Component {
         <TextInput
           editable={false}
           value={this.props.value}
-          placeholder={this.props.placeholder}
           style={styles.inputText}
         />
       </View>

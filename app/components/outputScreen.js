@@ -6,8 +6,8 @@ export default class OutputScreen extends React.Component {
   render() {
     return (
       <View>
-        <OutputScreenRow placeholder="Input" value={this.props.question} />
-        <OutputScreenRow placeholder="Output" value={this.props.answer} />
+        <OutputScreenRow value={this.props.question} />
+        <OutputScreenRow value={this.props.answer} />
       </View>
     );
   }
