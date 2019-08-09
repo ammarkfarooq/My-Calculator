@@ -18,7 +18,7 @@ export default class ButtonTax extends React.Component {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#228b22",
+    backgroundColor: "#ffd800",
     width: 90,
     height: 60,
     borderRadius: 10,
